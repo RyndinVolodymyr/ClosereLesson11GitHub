@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var text = "Hello Git Hub"
     /*
  
      1. Написать функцию, которая ничего не возвращает и принимает только один клоужер, который ничего не принимает и ничего не возвращает . Функция должна просто посчитать от 1 до 10 в цикле и после этого вызвать клоужер. Добавьте println в каждый виток цикла и в клоужер и проследите за очередностью выполнения команд.
@@ -24,9 +25,14 @@ class ViewController: UIViewController {
  
  */
     override func viewDidLoad() {
+        print(text)
+        print(reverse(str: "Stressed"))
         super.viewDidLoad()
     }
 
+    func reverse(str: String) -> String {
+        return String(str.reversed())
+    }
 
 }
 
