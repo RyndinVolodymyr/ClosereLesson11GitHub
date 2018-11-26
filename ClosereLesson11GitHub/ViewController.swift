@@ -30,6 +30,20 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    
+    
+    
+    
+    @IBOutlet weak var LabelHuebl: UILabel!
+    
+    
+    @IBAction func ButtonHuiaton(_ sender: Any) {
+        LabelHuebl.text = "Hui"
+    }
+    
+    
+    
+    
     func reverse(str: String) -> String {
         return String(str.reversed())
     }

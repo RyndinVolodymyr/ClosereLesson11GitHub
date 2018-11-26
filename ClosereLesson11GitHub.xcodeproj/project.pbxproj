@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA091A1621ABFABE006FDA4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA0E67B821AB2C7200786240 /* Main.storyboard */; };
 		DA0E67B521AB2C7200786240 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0E67B421AB2C7200786240 /* AppDelegate.swift */; };
 		DA0E67B721AB2C7200786240 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0E67B621AB2C7200786240 /* ViewController.swift */; };
-		DA0E67BA21AB2C7200786240 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA0E67B821AB2C7200786240 /* Main.storyboard */; };
 		DA0E67BC21AB2C7600786240 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0E67BB21AB2C7600786240 /* Assets.xcassets */; };
 		DA0E67BF21AB2C7600786240 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA0E67BD21AB2C7600786240 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -122,9 +122,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA091A1621ABFABE006FDA4C /* Main.storyboard in Resources */,
 				DA0E67BF21AB2C7600786240 /* LaunchScreen.storyboard in Resources */,
 				DA0E67BC21AB2C7600786240 /* Assets.xcassets in Resources */,
-				DA0E67BA21AB2C7200786240 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +283,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6Z64PE7758;
+				DEVELOPMENT_TEAM = U8VLNNF2C5;
 				INFOPLIST_FILE = ClosereLesson11GitHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -301,7 +301,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6Z64PE7758;
+				DEVELOPMENT_TEAM = U8VLNNF2C5;
 				INFOPLIST_FILE = ClosereLesson11GitHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
