@@ -1,0 +1,86 @@
+// 1. Написать функцию, которая ничего не возвращает и принимает только один клоужер, который ничего не принимает и ничего не возвращает . Функция должна просто посчитать от 1 до 10 в цикле и после этого вызвать клоужер. Добавьте println в каждый виток цикла и в клоужер и проследите за очередностью выполнения команд.
+
+func forClo(clo: () -> ()) -> () {
+    for i in 1...10{
+        print("\(i) - \(clo())")
+    }
+    print("This clouser at the end \(clo())")
+}
+
+forClo { print("Clouser in loop") }
+
+// 2. Используя метод массивов sorted, отсортируйте массив интов по возрастанию и убыванию. Пример показан в методичке.
+
+var arrayInt = [1, 34, 5, 68, 89, 6, 5, 4, 3, 4, 5, 6, 76656, 4, 3, 4, 5, 6, 7788, 8, 8, 8, 65, 4, 3]
+
+var incease = arrayInt.sorted(by: >)
+var decrcise = arrayInt.sorted(by: <)
+
+// 3. Напишите функцию, которая принимает массив интов и клоужер и возвращает инт. Клоужер должен принимать 2 инта (один опшинал) и возвращать да или нет. В самой функции создайте опшинал переменную. Вы должны пройтись в цикле по массиву интов и сравнивать элементы с переменной используя клоужер. Если клоужер возвращает да, то вы записываете значение массива в переменную. в конце функции возвращайте переменную. используя этот метод и этот клоужер найдите максимальный и минимальный элементы массива.
+
+func filterInt(arrayInt: [Int], clo: (Int, Int?)-> (Bool)) -> Int {
+    var opt: Int? = nil
+    
+    for value in arrayInt {
+        if opt == nil || clo(value, opt) {
+            opt = value
+        }
+    }
+    return opt ?? 0
+}
+
+var max = filterInt(arrayInt: arrayInt, clo: { $0 > $1! })
+var min = filterInt(arrayInt: arrayInt, clo: { $0 < $1! })
+print("Max - \(max), Min - \(min)")
+
+// 4. Создайте произвольную строку. Преобразуйте ее в массив букв. Используя метод массивов sorted отсортируйте строку так, чтобы вначале шли гласные в алфавитном порядке, потом согласные, потом цифры, а потом символы
+
+var line = "sdkjdfhilhgoiarhg9438t340t8034mt 8348t73-t 7-3tj3pt4c.34to,c1"
+
+func transformation(str: String) -> [String] {
+    var tempStr = [String]()
+    for i in str {
+        tempStr.append(String(i))
+    }
+    return tempStr
+}
+
+func priority(_ char: String) -> Int {
+    switch char {
+    case "a", "i", "o", "e", "u", "y": return 0
+    case "b"..."z": return 1
+    case "0"..."9": return 2
+    default: return 3
+    }
+}
+
+var strArray = transformation(str: line)
+
+var sort = strArray.sorted {
+    switch (priority($0), priority($1)) {
+    case let(x, y) where x < y: return true
+    case let(x, y) where x > y: return false
+    default: return $0 <= $1
+    }
+}
+
+print(sort)
+
+// 5. Проделайте задание №3 но для нахождения минимальной и максимальной буквы из массива букв (соответственно скалярному значению) ( Напишите функцию, которая принимает массив интов и клоужер и возвращает инт. Клоужер должен принимать 2 инта (один опшинал) и возвращать да или нет. В самой функции создайте опшинал переменную. Вы должны пройтись в цикле по массиву интов и сравнивать элементы с переменной используя клоужер. Если клоужер возвращает да, то вы записываете значение массива в переменную. в конце функции возвращайте переменную. используя этот метод и этот клоужер найдите максимальный и минимальный элементы массива.)
+
+var arrayStr = ["q","l", "j", "e", "y", "h", "d", "a", "s", "d"]
+
+func filterStr(str: [String], clo: (String, String?) -> Bool) -> String {
+    var optStr: String? = nil
+    for c in str {
+        if optStr == nil || clo(c, optStr) {
+            optStr = c
+        }
+    }
+    return optStr ?? "Error"
+}
+
+var maxChar = filterStr(str: arrayStr, clo: { $0 > $1! })
+var minChar = filterStr(str: arrayStr, clo: { $0 < $1! })
+print(maxChar)
+print(minChar)
